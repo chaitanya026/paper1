@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int* smallintegers(int array[],int size,int ans[]){
+	int ele=INT_MAX;
+	int ele2=INT_MAX;
+	for(int i=0;i<size;i++){
+		if(array[i]<ele){
+			ele=array[i];
+		}
+	}
+	
+	for(int i=0;i<size;i++){
+		if(array[i]>ele && array[i]<ele2){
+			ele2=array[i];
+		}
+	}
+	ans[0]=ele;
+	ans[1]=ele2;
+	return ans;
+	
+}
+int main(){
+	int n;
+	cout<<"Enter num of elements in array"<<endl;
+	cin>>n;
+	int a[n];
+	cout<<"Enter the elements of array"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	int ans[2];
+	int* small =smallintegers(a,n,ans);
+	cout<<"The smallest element is "<<small[0]<<endl;
+	cout<<"The second smallest element is "<< small[1]<<endl;
+	return 0;
+}
